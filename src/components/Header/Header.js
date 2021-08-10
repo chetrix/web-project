@@ -7,15 +7,8 @@ import CromaLogo from './Atoms/CromaLogo';
 import OrderHeader from './Atoms/OrderHeader';
 import Cart from './Atoms/Cart';
 
-const MemoedHamburgerMenu =  React.memo(HamburgerMenu);
-const MemoedCromaLogo =  React.memo(CromaLogo);
-const MemoedOrder =  React.memo(OrderHeader);
-const MemoedCart =  React.memo(Cart);
-
-const Header = ({ page , hamburgerMenuData, cartData}) => {
-  const [navBarClassName, setNavBarClassName] = useState('');
-  const [userWrapClassName, setUserWrapClassName] = useState('');
-  let myAccount = [];
+const Header = ({ page , hamburgerMenuData}) => {
+  //start
   return (
     <>
       <div>
