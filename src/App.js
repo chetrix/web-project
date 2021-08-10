@@ -6,9 +6,10 @@ import {BrowserRouter as Router} from 'react-router-dom';
 
 const Route = require('react-router-dom').Route;
 const Switch = require('react-router-dom').Switch;
-export default function App() {
+export default function App(props) {
   return (
     <React.Fragment>
+      <Header {...props} hideSec={'topHide'}/>
       <Router>
         <Switch>
           <Route exact path={['/', '/home']} component={Home}/>
