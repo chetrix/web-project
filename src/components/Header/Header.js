@@ -6,18 +6,24 @@ import HamburgerMenu from './Organisms/HamburgerMenu';
 import CromaLogo from './Atoms/CromaLogo';
 import OrderHeader from './Atoms/OrderHeader';
 import Cart from './Atoms/Cart';
+import MyAccount from './Organisms/MyAccount';
+import DeliveringTo from './Atoms/DeliveringTo';
+import {loadHeaderData, loadPageType} from '../../store/actions/headerAction';
+import {loadStoreLocationData} from '../../store/actions/storeLocatorAction';
 
 const MemoedHamburgerMenu =  React.memo(HamburgerMenu);
 const MemoedCromaLogo =  React.memo(CromaLogo);
 const MemoedOrder =  React.memo(OrderHeader);
 const MemoedCart =  React.memo(Cart);
+const MemoedMyAccount = React.memo(MyAccount);
+const MemoedDeliveringTo = React.memo(DeliveringTo);
 
-const Header = ({ page , hamburgerMenuData, cartData}) => {
+function Header ({ page , hamburgerMenuData, cartData}){
   const [navBarClassName, setNavBarClassName] = useState('');
   const [userWrapClassName, setUserWrapClassName] = useState('');
   let myAccount = [];
+
   return (
-    <>
       <div>
         <div className='sparkle'>
           <img
@@ -66,10 +72,9 @@ const Header = ({ page , hamburgerMenuData, cartData}) => {
         </div>
         <Toaster/>
         <div className='sparkle'>
-          <img style={{wdith:'8.8rem', height: '9.9rem'}}/>
+          <img style={{width:'8.8rem', height: '9.9rem'}}/>
         </div>
       </div>
-    </>
   );
 };
 export const mapStateToProps = (state) => {
